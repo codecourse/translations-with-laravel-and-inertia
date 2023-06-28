@@ -36,6 +36,7 @@ class HandleInertiaRequests extends Middleware
             'auth' => [
                 'user' => $request->user(),
             ],
+            'language' => app()->getLocale(),
             'languages' => LanguageResource::collection(Lang::cases()),
             'ziggy' => function () use ($request) {
                 return array_merge((new Ziggy)->toArray(), [
